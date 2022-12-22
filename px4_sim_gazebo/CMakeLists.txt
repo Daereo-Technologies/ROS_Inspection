@@ -103,7 +103,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES px4_sim_gazebo
+#  LIBRARIES px4_offb_gazebo
   CATKIN_DEPENDS roscpp rospy
 #  DEPENDS system_lib
 )
@@ -121,7 +121,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/px4_sim_gazebo.cpp
+#   src/${PROJECT_NAME}/px4_offb_gazebo.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -129,8 +129,8 @@ include_directories(
 ## either from message generation or dynamic reconfigure
 # add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-add_executable(${PROJECT_NAME}_sim_node src/offboard_control.cpp)
-add_executable(${PROJECT_NAME}_ref_sim_node src/ref_offboard_control.cpp)
+add_executable(${PROJECT_NAME}_offb_node src/offboard_control.cpp)
+add_executable(${PROJECT_NAME}_ref_offb_node src/ref_offboard_control.cpp)
 add_executable(${PROJECT_NAME}_ref_node src/ref_node.cpp)
 
 ## Rename C++ executable without prefix
@@ -139,17 +139,17 @@ add_executable(${PROJECT_NAME}_ref_node src/ref_node.cpp)
 ## e.g. "rosrun someones_pkg node" instead of "rosrun someones_pkg someones_pkg_node"
 # set_target_properties(${PROJECT_NAME}_node PROPERTIES OUTPUT_NAME node PREFIX "")
 
-add_dependencies(${PROJECT_NAME}_sim_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(${PROJECT_NAME}_ref_sim_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(${PROJECT_NAME}_offb_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(${PROJECT_NAME}_ref_offb_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(${PROJECT_NAME}_ref_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-target_link_libraries(${PROJECT_NAME}_sim_node
+target_link_libraries(${PROJECT_NAME}_offb_node
    ${catkin_LIBRARIES}
  )
 target_link_libraries(${PROJECT_NAME}_ref_node
    ${catkin_LIBRARIES}
  )
-target_link_libraries(${PROJECT_NAME}_ref_sim_node
+target_link_libraries(${PROJECT_NAME}_ref_offb_node
    ${catkin_LIBRARIES}
  )
 
@@ -201,7 +201,7 @@ target_link_libraries(${PROJECT_NAME}_ref_sim_node
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_px4_sim_gazebo.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_px4_offb_gazebo.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
