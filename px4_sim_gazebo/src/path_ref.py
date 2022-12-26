@@ -29,11 +29,11 @@ def get_pose(data):
     global current_wp
     current_pose = [round(data.pose.position.x, 2), round(data.pose.position.y, 2), round(data.pose.position.z, 2)]
 
-    rospy.loginfo(str(py_distance(wps[current_wp], current_pose)))
+    #rospy.loginfo(str(py_distance(wps[current_wp], current_pose)))
     if py_distance(wps[current_wp], current_pose) < 1 and current_wp < len(wps)-1: 
         rospy.sleep(1)
         current_wp = current_wp + 1
-        rospy.loginfo("Reached goal " + str(current_wp+1) + ", moving to next")
+        rospy.loginfo("Reached goal " + str(current_wp+1))
     if current_wp == len(wps)-1:
         rospy.sleep(3)
         current_wp = 0
@@ -54,6 +54,7 @@ def ref_pub():
     #yaw2= wps[i][6]
 
     rospy.loginfo("Reference node online")
+    rospy.loginfo("Publishing waypoints...")
     while not rospy.is_shutdown():
         ref_pose = PoseStamped()
         

@@ -1,6 +1,0 @@
-<launch>
-  <node name="px4_sim_gazebo_ref_node" pkg="px4_sim_gazebo" type="px4_sim_gazebo_ref_node" />
-  <node name="px4_sim_gazebo_ref_sim_node" pkg="px4_sim_gazebo" type="px4_sim_gazebo_ref_sim_node" />
-</launch>
-
-

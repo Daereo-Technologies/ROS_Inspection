@@ -35,7 +35,8 @@ void ref_cb(const geometry_msgs::PoseStamped::ConstPtr& msg){
 int main(int argc, char **argv)
 {
 
-    ROS_INFO("NODE OK");
+    ROS_INFO("Control node online");
+    ROS_INFO("Listening to waypoints...");
     ros::init(argc, argv, "ref_offb_node");
     ros::NodeHandle nh;
 
