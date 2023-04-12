@@ -1,0 +1,7 @@
+<launch>
+  <param name="/use_sim_time" value="true"/>
+  <arg name="world" default="$(find inspection_master)/worlds/A321.world"/>
+  <node name="gazebo" pkg="gazebo_ros" type="gazebo" args="$(arg world)" output="screen"/>
+  <node name="transforms" pkg="inspection_master" type="transforms" output="screen"/>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-sdf -database Vulcan_G401 -model Vulcan_G401 -x 0 -y 0 -z 0.25" output="screen"/>
+</launch>

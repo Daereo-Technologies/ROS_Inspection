@@ -1,0 +1,14 @@
+<model>
+  <name>A320</name>
+  <link>
+    <name>base_link</name>
+    <visual name='visual'>
+      <geometry>
+        <mesh>
+          <uri>file://root/sources/airdx_ws/src/ROS_Inspection/inspection_master/models/planes/A320.obj</uri>
+        </mesh>
+      </geometry>
+    </visual>
+  </link>
+</model>
+

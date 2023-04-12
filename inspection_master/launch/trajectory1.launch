@@ -1,0 +1,6 @@
+<launch>
+  <node name="ref_pub" pkg="px4_sim_gazebo" type="path_ref.py" output="screen" />
+  <node name="px4_sim_gazebo_ref_offb_node" pkg="px4_sim_gazebo" type="px4_sim_gazebo_ref_offb_node" output="screen" />
+</launch>
+
+

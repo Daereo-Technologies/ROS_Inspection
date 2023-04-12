@@ -1,0 +1,86 @@
+<?xml version='1.0'?>
+<sdf version='1.7'>
+  <model name='Vulcan_G401'>
+    <link name='base_link'>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <pose>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <geometry>
+          <mesh>
+            <uri>model://Vulcan_G401/assembly.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+            <pose>0 0 0 0 0 0</pose>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+          <lighting>1</lighting>
+          <ambient>0.01 0.01 0.01 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+          <shader type='pixel'/>
+        </material>
+        <pose>0 0 0 0 -0 0</pose>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+    </link>
+    <link name='camera_link'>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <pose>-0.086826 -0.079217 0.210503 0 -0 0</pose>
+      <visual name='visual'>
+        <geometry>
+          <mesh>
+            <uri>model://Vulcan_G401/zed2.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+          <shader type='pixel'/>
+        </material>
+        <pose>0 0 0 0 -0 0</pose>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+    </link>
+    <link name='lidar_link'>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <pose>-0.003025 -0.010156 0.17518 1.58488 -0 0</pose>
+      <visual name='visual'>
+        <geometry>
+          <mesh>
+            <uri>model://Vulcan_G401/rs_lidar.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+            <pose>1 1 1 0 0 0</pose>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+          <shader type='pixel'/>
+        </material>
+        <pose>0 0 0 0 -0 0</pose>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+    </link>
+    <static>1</static>
+    <allow_auto_disable>1</allow_auto_disable>
+  </model>
+</sdf>
