@@ -17,7 +17,7 @@ int main(int argc, char** argv){
     while(ros::ok()){
         trans.header.stamp = ros::Time::now();
         trans.header.frame_id = "map";
-        trans.child_frame_id = "camera_link";
+        trans.child_frame_id = "base_link";
 
         trans.transform.translation.x = 0;
         trans.transform.translation.y = 0;

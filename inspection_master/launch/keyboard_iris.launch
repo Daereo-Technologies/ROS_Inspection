@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find px4)/launch/mavros_posix_sitl.launch"/>
+
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find inspection_master)/rviz/inspection.rviz"/>
+    <!-- <node pkg="rqt_image_view" type="rqt_image_view" name="image_view" args="/camera/color/image_raw"/> -->
+
+    <node pkg="inspection_master" type="offb_handler" name="offb_handler"/>
+    <!-- <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard" name="teleop_keyboard"/> -->
+
+    <node pkg="tf" type="static_transform_publisher" name="base_2_scan" args="0 0 0 0 0 0 base_link scan_link 100"/>
+    <node pkg="tf" type="static_transform_publisher" name="base_2_camera" args="0 0 0 0 0 0 base_link camera_link 100"/>
+    <node pkg="tf" type="static_transform_publisher" name="base_2_map" args="0 0 0 0 0 0 base_link map 100"/> 
+
+</launch>

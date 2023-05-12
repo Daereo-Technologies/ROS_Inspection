@@ -2,8 +2,8 @@
   <include file="$(find mavros)/launch/px4.launch">
   <arg name="fcu_url" default="udp://:14540@127.0.0.1:14557"/>
   </include>
-  <node name="ref_pub" pkg="px4_sim_gazebo" type="path_ref.py" />
-  <node name="px4_sim_gazebo_ref_offb_node" pkg="px4_sim_gazebo" type="px4_sim_gazebo_ref_offb_node" />
+  <!-- <node name="ref_pub" pkg="inspection_master" type="path_ref.py" /> -->
+  <node name="ref_offboard_control" pkg="inspection_master" type="ref_offboard_control" />
 </launch>
 
 
