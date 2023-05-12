@@ -19,9 +19,12 @@ include_directories(
 
 add_executable(ref_offb_node src/ref_offboard_control.cpp)
 add_executable(transforms src/transforms.cpp)
+add_executable(offb_handler src/offb_handler.cpp)
 
 add_dependencies(ref_offb_node  ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(transforms ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(offb_handler ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 target_link_libraries(ref_offb_node  ${catkin_LIBRARIES} )
 target_link_libraries(transforms ${catkin_LIBRARIES} )
+target_link_libraries(offb_handler ${catkin_LIBRARIES} )
